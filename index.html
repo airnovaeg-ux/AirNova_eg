@@ -1,89 +1,335 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AirNova | تواصل معنا</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
-body { background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 50%, #bae6fd 100%); color: #0f172a; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px 15px; }
-.card { width: 100%; max-width: 430px; background: #ffffff; border: 2px solid #bae6fd; border-radius: 24px; padding: 32px 18px; text-align: center; box-shadow: 0 15px 35px rgba(2, 132, 199, 0.15); border-top: 7px solid #0284c7; }
-.logo-box { width: 105px; height: 105px; border-radius: 22px; margin: 0 auto 14px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f0f9ff; border: 2px solid #7dd3fc; box-shadow: 0 6px 16px rgba(2, 132, 199, 0.15); }
-.logo-box img { width: 100%; height: 100%; object-fit: cover; }
-h1 { font-size: 27px; font-weight: 800; color: #0369a1; margin-bottom: 6px; }
-.sub { font-size: 13px; color: #0c4a6e; background: #f0f9ff; padding: 8px 12px; border-radius: 10px; border: 1px solid #bae6fd; margin-bottom: 24px; font-weight: 700; line-height: 1.6; display: inline-block; }
-.links { display: flex; flex-direction: column; gap: 12px; }
-.btn { display: flex; align-items: center; justify-content: space-between; padding: 13px 16px; border-radius: 15px; text-decoration: none; background: #f8fafc; border: 1.5px solid #e0f2fe; transition: 0.2s; }
-.btn:hover, .btn:active { background: #e0f2fe; border-color: #38bdf8; transform: translateY(-2px); }
-.right { display: flex; align-items: center; gap: 13px; }
-.ico { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 21px; color: #fff; flex-shrink: 0; }
-.txt { text-align: right; }
-.title { display: block; font-size: 15px; font-weight: 800; color: #0c4a6e; }
-.desc { display: block; font-size: 12px; color: #475569; font-weight: 600; direction: ltr; text-align: right; }
-.fb { background: #1877F2; }
-.wa { background: #25D366; }
-.ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-.tt { background: #0f172a; }
-.gm { background: #EA4335; }
-.ph { background: #0284c7; }
-.arr { color: #0284c7; font-size: 14px; }
-footer { margin-top: 25px; font-size: 12px; color: #64748b; font-weight: 700; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIR NOVA | حلول الهواء باحترافية</title>
+    <!-- خطوط جوجل (Cairo) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #0056b3; /* أزرق الشركة */
+            --secondary-color: #2c3e50; /* رمادي غامق */
+            --accent-color: #00a8ff; /* أزرق فاتح */
+            --text-light: #ffffff;
+            --bg-light: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        header {
+            background-color: var(--text-light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            margin-right: 20px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: var(--text-light);
+            padding: 150px 5% 100px;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: #25D366; /* لون الواتساب */
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: var(--text-light);
+            color: var(--primary-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 5%;
+            text-align: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+            font-weight: 800;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--text-light);
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            padding: 50px 5% 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            font-size: 2rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+        
+        .contact-info p {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        hr {
+            border-color: rgba(255,255,255,0.1);
+            margin: 20px 0;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.2rem; }
+            .nav-links { display: none; /* Can be replaced with a hamburger menu */ }
+            .cta-buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+        }
+    </style>
 </head>
 <body>
-<div class="card">
-    <div class="logo-box">
-        <img src="FB_IMG_1792618303619.jpg" alt="AirNova" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-wind\' style=\'font-size:38px;color:#0284c7;\'></i>';">
-    </div>
-    <h1>AIR NOVA</h1>
-    <div class="sub">حلول الهواء باحترافية<br>تهوية • شفط • مجاري هواء • أنظمة تكييف</div>
-    <div class="links">
-        <a href="https:https://www.facebook.com/share/1DcvGNqxfX/" target="_blank" rel="noopener noreferrer" class="btn">
-            <div class="right">
-                <div class="ico fb"><i class="fa-brands fa-facebook-f"></i></div>
-                <div class="txt"><span class="title">AirNova Facebook</span><span class="desc">صفحتنا الرسمية على فيسبوك</span></div>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-fan fa-spin" style="--fa-animation-duration: 3s;"></i>
+                AIR <span>NOVA</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#home">الرئيسية</a>
+                <a href="#services">خدماتنا</a>
+                <a href="#contact">تواصل معنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>AIR NOVA</h1>
+        <p>حلول الهواء باحترافية 🌬️ هواء أفضل.. لحياة أفضل</p>
+        <div class="cta-buttons">
+            <a href="https://wa.me/201102200520" class="btn btn-primary" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> راسلنا واتساب
+            </a>
+            <a href="tel:01115632430" class="btn btn-secondary">
+                <i class="fa-solid fa-phone"></i> اتصل بنا الآن
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="section-title">خدماتنا المتكاملة</h2>
+        <div class="services-grid">
+            <!-- خدمة 1 -->
+            <div class="service-card">
+                <i class="fa-solid fa-wind service-icon"></i>
+                <h3>أنظمة التهوية</h3>
+                <p>تصميم وتنفيذ أحدث أنظمة التهوية لضمان تجديد الهواء وتوفير بيئة نقية وصحية للمساحات السكنية والتجارية.</p>
             </div>
-            <i class="fa-solid fa-chevron-left arr"></i>
-        </a>
-        <a href="https://wa.me/201102200520" target="_blank" rel="noopener noreferrer" class="btn">
-            <div class="right">
-                <div class="ico wa"><i class="fa-brands fa-whatsapp"></i></div>
-                <div class="txt"><span class="title">تواصل عبر واتساب</span><span class="desc">01102200520</span></div>
+            <!-- خدمة 2 -->
+            <div class="service-card">
+                <i class="fa-solid fa-fan service-icon"></i>
+                <h3>أنظمة الشفط</h3>
+                <p>تركيب أنظمة شفط قوية وفعالة للمطابخ والمصانع للتخلص من الأدخنة والروائح غير المرغوب فيها باحترافية عالية.</p>
             </div>
-            <i class="fa-solid fa-chevron-left arr"></i>
-        </a>
-        <a href="https://www.instagram.com/air_nova_eg?exln=MTdyeHhtMWdxNmkzeg==" target="_blank" rel="noopener noreferrer" class="btn">
-            <div class="right">
-                <div class="ico ig"><i class="fa-brands fa-instagram"></i></div>
-                <div class="txt"><span class="title">Instagram</span><span class="desc">@air_nova_eg</span></div>
+            <!-- خدمة 3 -->
+            <div class="service-card">
+                <i class="fa-solid fa-bars-staggered service-icon"></i>
+                <h3>مجاري الهواء (Ducts)</h3>
+                <p>تصنيع وتركيب مجاري الهواء (الدكت) المطابقة للمواصفات القياسية لضمان توزيع الهواء بكفاءة وهدوء تام.</p>
             </div>
-            <i class="fa-solid fa-chevron-left arr"></i>
-        </a>
-        <a href="https://www.tiktok.com/@airnovaeg?_r=1&_t=ZS-9AkX80MRAaj" target="_blank" rel="noopener noreferrer" class="btn">
-            <div class="right">
-                <div class="ico tt"><i class="fa-brands fa-tiktok"></i></div>
-                <div class="txt"><span class="title">TikTok</span><span class="desc">@airnovaeg</span></div>
+            <!-- خدمة 4 -->
+            <div class="service-card">
+                <i class="fa-regular fa-snowflake service-icon"></i>
+                <h3>أنظمة التكييف</h3>
+                <p>حلول تكييف متكاملة (مركزي، كونسيلد، اسبليت) تشمل التوريد والتركيب والصيانة لضمان درجات حرارة مثالية.</p>
             </div>
-            <i class="fa-solid fa-chevron-left arr"></i>
-        </a>
-        <a href="mailto:Airnovaeg@gmail.com" class="btn">
-            <div class="right">
-                <div class="ico gm"><i class="fa-solid fa-envelope"></i></div>
-                <div class="txt"><span class="title">البريد الإلكتروني (Gmail)</span><span class="desc">Airnovaeg@gmail.com</span></div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <section id="contact">
+        <footer>
+            <div class="footer-content">
+                <h2>جاهزون لتنفيذ مشروعك؟</h2>
+                <div class="contact-info">
+                    <p><i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> واتساب: <a href="https://wa.me/201102200520" dir="ltr">01102200520</a></p>
+                    <p><i class="fa-solid fa-phone"></i> اتصال: <a href="tel:01115632430" dir="ltr">01115632430</a></p>
+                    <p><i class="fa-solid fa-location-dot"></i> الموقع: مصر</p>
+                </div>
+                
+                <div class="social-links">
+                    <!-- رابط الفيسبوك الجديد الخاص بك -->
+                    <a href="https://www.facebook.com/share/1DcvGNqxfX/" target="_blank" title="تابعنا على فيسبوك">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
             </div>
-            <i class="fa-solid fa-chevron-left arr"></i>
-        </a>
-        <a href="tel:01102200520" class="btn">
-            <div class="right">
-                <div class="ico ph"><i class="fa-solid fa-phone-volume"></i></div>
-                <div class="txt"><span class="title">اتصال مباشر</span><span class="desc">01115632430</span></div>
-            </div>
-            <i class="fa-solid fa-chevron-left arr"></i>
-        </a>
-    </div>
-    <footer>© 2026 AirNova - جميع الحقوق محفوظة</footer>
-</div>
+            <hr>
+            <p>جميع الحقوق محفوظة &copy; 2026 - AIR NOVA | حلول الهواء باحترافية</p>
+        </footer>
+    </section>
+
 </body>
 </html>
